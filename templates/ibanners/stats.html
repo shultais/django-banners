@@ -1,0 +1,4 @@
+<h1>Клиенты</h1>
+{% for client in clients %}
+   <a href="{% url ibanners.client client_id=client.id %}">{{ client.name }}</a><br/>
+{% endfor %}

@@ -1,0 +1,24 @@
+<h1>{{ banner.name }}</h1>
+
+Дата начала: {% if banner.begin_date %}{{ banner.begin_date|date:"d.m.Y" }}{% else %}не задана{% endif %}<br/>
+Дата окончания: {% if banner.end_date %}{{ banner.end_date|date:"d.m.Y" }}{% else %}не задана{% endif %}<br/>
+Статус:
+
+<table>
+   <tr>
+      <td>Дата</td>
+      <td>Показов</td>
+      <td>Кликов</td>
+      <td>CTR</td>
+   </tr>
+{% for stat in stats %}
+   <tr>
+      <td>{{ stat.date }}</td>
+      <td>{{ stat.shows }}</td>
+      <td>{{ stat.clicks }}</td>
+      <td>{{ stat.ctr }}</td>
+      <td></td>
+      <td></td>
+   </tr>
+{% endfor %}
+</table>
